@@ -18,7 +18,17 @@ const defaultState = {
   canIncreaseCurrent: true,
   canDecreaseCurrent: false,
   canMoveItem: true,
-  items: [1, 2]
+  items: [{
+    id: 1,
+		artNo: "123456",
+		name: "some name",
+		description: "some detail description of this product"
+  }, {
+    id: 1,
+		artNo: "adfxzv",
+		name: "some name 2",
+		description: "some detail description of this product 2"
+  }]
 }
 
 const currentIndexBehivior = (newState) => {
@@ -35,7 +45,8 @@ const currentIndexBehivior = (newState) => {
     canIncreaseCurrent: currentIndex < newState.items.length - 1,
     canDecreaseCurrent: currentIndex > 0,
     // other states cann't be exist
-    canMoveItem: newState.items.length > 0 && currentIndex > -1
+    canMoveItem: newState.items.length > 0 && currentIndex > -1,
+    currentIndex
   }
 }
 

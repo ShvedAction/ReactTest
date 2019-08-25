@@ -17,7 +17,7 @@ const mapDispatchToProps = {
 
 const ItemsMap = ({items, currentIndex}) =>
   items.map((el, ind) => (
-    <div  key={ind}>{el}</div>
+    <div  key={ind}>{el.name}</div>
   ))
 
 const ShortView = ({ short, toDetailsList, changeCurrentBy }) =>{ 
