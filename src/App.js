@@ -4,9 +4,9 @@ import { Provider } from 'react-redux'
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import reducers from './store'
-import logo from './logo.svg'
 import './App.css'
-import Products from './components/Products'
+import ShortView from './components/ShortView'
+// import DetailView from './components/DetailView'
 
 const __DEV__ = true
 
@@ -22,10 +22,8 @@ const store = createStore(
 const App = () => {
   return (
     <Provider store={store}>
-      <div className='App'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <Products />
-      </div>
+      <ShortView />
+      <div />
     </Provider>
   )
 }
