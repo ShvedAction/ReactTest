@@ -15,9 +15,9 @@ export const add = (products) => ({ type: ADD_PRODUCTS, products })
 
 const defaultState = {
   currentIndex: 0,
-  canIncreaseCurrent: false,
+  canIncreaseCurrent: true,
   canDecreaseCurrent: false,
-  canMoveItem: false,
+  canMoveItem: true,
   items: [1, 2]
 }
 
@@ -44,7 +44,7 @@ export default (state = defaultState, action) => {
     case DROP_CURRENT:
       return currentIndexBehivior({
         ...state,
-        items: state.filter((e, ind) => ind !== state.currentIndex).map(el => ({ ...el }))
+        items: state.items.filter((e, ind) => ind !== state.currentIndex).map(el => ({ ...el }))
       })
 
     case ADD_PRODUCTS:
