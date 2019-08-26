@@ -6,6 +6,7 @@ import reducers from './store'
 import './App.css'
 import ShortView from './components/ShortView'
 import DetailView from './components/DetailView'
+import DataProvider from './components/DataProvider'
 
 const __DEV__ = true
 
@@ -21,8 +22,10 @@ const store = createStore(
 const App = () => {
   return (
     <Provider store={store}>
-      <ShortView />
-      <DetailView />
+      <DataProvider>
+        <ShortView />
+        <DetailView />
+      </DataProvider>
     </Provider>
   )
 }
