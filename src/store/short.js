@@ -18,17 +18,7 @@ const defaultState = {
   canIncreaseCurrent: true,
   canDecreaseCurrent: false,
   canMoveItem: true,
-  items: [{
-    id: 1,
-    artNo: '123456',
-    name: 'some name',
-    description: 'some detail description of this product'
-  }, {
-    id: 1,
-    artNo: 'adfxzv',
-    name: 'some name 2',
-    description: 'some detail description of this product 2'
-  }]
+  items: []
 }
 
 /**
