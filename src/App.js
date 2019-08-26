@@ -7,6 +7,7 @@ import './App.css'
 import ShortView from './components/ShortView'
 import DetailView from './components/DetailView'
 import DataProvider from './components/DataProvider'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const __DEV__ = true
 
