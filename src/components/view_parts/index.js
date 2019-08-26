@@ -1,13 +1,13 @@
 import React from 'react'
 
 import {
-  main,
+  col,
   items,
   footer
-} from './parts.css'
+} from './view_parts.module.css'
 
 export const ViewWrapper = ({ children }) =>
-  <div className={main}>{children}</div>
+  <div className={col}>{children}</div>
 
 export const ItemsTable = ({ children }) =>
   <div className={items}>{children}</div>
