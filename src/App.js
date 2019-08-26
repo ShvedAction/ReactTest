@@ -6,7 +6,7 @@ import thunkMiddleware from 'redux-thunk'
 import reducers from './store'
 import './App.css'
 import ShortView from './components/ShortView'
-// import DetailView from './components/DetailView'
+import DetailView from './components/DetailView'
 
 const __DEV__ = true
 
@@ -23,7 +23,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <ShortView />
-      <div />
+      <DetailView />
     </Provider>
   )
 }

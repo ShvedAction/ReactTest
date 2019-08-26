@@ -6,6 +6,8 @@
 const SWITCH_SELECTION = 'SWITCH_SELECTION'
 const DROP_SELECTED = 'DROP_SELECTED'
 const ADD_PRODUCT = 'ADD_PRODUCT'
+const SELECT_ALL = 'SELECT_ALL'
+const DE_SELECT_ALL = 'DE_SELECT_ALL'
 
 export const switchSelection = (index) => ({ type: SWITCH_SELECTION, index })
 
@@ -13,12 +15,15 @@ export const dropSelected = () => ({ type: DROP_SELECTED })
 
 export const add = (product) => ({ type: ADD_PRODUCT, product })
 
+export const selectAll = () => ({ type: SELECT_ALL })
+export const deSelectAll = () => ({ type: DE_SELECT_ALL })
+
 const defaultState = {
   selected: [],
   canSelectAll: false,
   canDeselectAll: false,
   canMoveItems: false,
-  items: [1, 2]
+  items: []
 }
 
 // It is model ob behivior for select falgs selected it
@@ -64,6 +69,18 @@ export default (state = defaultState, action) => {
       return selectedBehivior({
         ...state,
         items: state.items.filter((el, ind) => !state.selected.includes(ind)).map(el => ({ ...el })),
+        selected: []
+      })
+
+    case SELECT_ALL:
+      return selectedBehivior({
+        ...state,
+        selected: state.items.map((el, ind) => ind)
+      })
+
+    case DE_SELECT_ALL:
+      return selectedBehivior({
+        ...state,
         selected: []
       })
 

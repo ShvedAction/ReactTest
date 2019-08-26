@@ -15,9 +15,9 @@ const toDetailsList = () => (dispatch, getState) => {
 }
 
 const toShortList = () => (dispatch, getState) => {
-  const { selectedIndexes, items } = getState().detail
+  const { selected, items } = getState().detail
 
-  const products = selectedIndexes.map(val => items[val])
+  const products = selected.map(val => items[val])
 
   dispatch(addToShort(products))
   dispatch(dropFromDetail())
