@@ -36,23 +36,23 @@ const defaultState = {
  * You can fast check this like here:
  *   for(var  i = -5; i<15; i++) {console.log(i, normalizationIndex(i, 1, 6))}
  * I explain the same math magic on my chennal: https://youtu.be/O-roAV-ttBI
- * @param {normalization value} index 
- * @param {min value} min 
- * @param {max value} max 
+ * @param {normalization value} index
+ * @param {min value} min
+ * @param {max value} max
  */
 const normalizationIndex = (index, min, max) =>
-  (index + Math.abs(index - min) + min)/2 - (index + Math.abs(index - max) - max)/2
+  (index + Math.abs(index - min) + min) / 2 - (index + Math.abs(index - max) - max) / 2
 
 const currentIndexBehivior = (newState) => {
   const { currentIndex, items } = newState
 
   return {
     ...newState,
-    canIncreaseCurrent: currentIndex < newState.items.length - 1,
+    canIncreaseCurrent: currentIndex < items.length - 1,
     canDecreaseCurrent: currentIndex > 0,
     // other states cann't be exist
-    canMoveItem: newState.items.length > 0 && currentIndex > -1,
-    currentIndex: normalizationIndex(currentIndex, 0, newState.items.length - 1)
+    canMoveItem: items.length > 0 && currentIndex > -1,
+    currentIndex: normalizationIndex(currentIndex, 0, items.length - 1)
   }
 }
 
