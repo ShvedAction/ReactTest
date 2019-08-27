@@ -15,8 +15,8 @@ const store = createStore(
   reducers,
   {},
   compose(
-    applyMiddleware(thunkMiddleware),
-    __DEV__ && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    applyMiddleware(thunkMiddleware) //,
+    //__DEV__ && window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 )
 
