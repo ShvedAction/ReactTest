@@ -43,9 +43,9 @@ const selectedBehivior = (newState) => {
 }
 
 const _switchSelection = (selections, index) => {
-  if (selections.inculdes(index)) {
+  if (selections.includes(index)) {
     // imutable
-    return selections.fiter(el => el !== index)
+    return selections.filter(el => el !== index)
   } else {
     return [...selections, index]
   }

@@ -4,6 +4,7 @@ import { toShortList } from '../../store/thunks'
 import { switchSelection, selectAll, deSelectAll } from '../../store/detail'
 import Button from '../Button'
 import { ViewWrapper, ItemsTable, ViewFooter } from '../view_parts'
+import './index.css'
 
 const mapStateToProps = ({ detail }) => ({
   detail
@@ -18,7 +19,21 @@ const mapDispatchToProps = {
 
 const ItemsMap = ({ items, selected, onSelect }) =>
   items.map((el, ind) => (
-    <div className='test' key={ind}>{el.name}</div>
+    <div className='row product-row' key={el.id}>
+      <div className='col-11'>
+        <p>Арт.: {el.artNo}</p>
+        <p>{el.name}</p>
+        <div className='product-details'>{el.description}</div>
+      </div>
+      <div className='col-1 align-self-center'>
+
+        <input
+          type='checkbox'
+          checked={selected.includes(ind)}
+          onChange={((index) => () => onSelect(index))(ind)}
+        />
+      </div>
+    </div>
   ))
 
 const DetailView = ({ detail, switchSelection, selectAll, deSelectAll, toShortList }) => {
@@ -26,7 +41,10 @@ const DetailView = ({ detail, switchSelection, selectAll, deSelectAll, toShortLi
   return (
     <ViewWrapper>
       <ItemsTable>
-        <ItemsMap items={items} selected={selected} onSelect={switchSelection} />
+        <div className='container'>
+
+          <ItemsMap items={items} selected={selected} onSelect={switchSelection} />
+        </div>
       </ItemsTable>
       <ViewFooter>
         <Button activation={canSelectAll} click={selectAll}>Выбрать всё</Button>
