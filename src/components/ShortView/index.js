@@ -4,6 +4,7 @@ import { toDetailsList } from '../../store/thunks'
 import { changeCurrentBy } from '../../store/short'
 import Button from '../Button'
 import { ViewWrapper, ItemsTable, ViewFooter } from '../view_parts'
+import { articul } from './ShortView.module.css'
 
 const mapStateToProps = ({ short }) => ({
   short
@@ -21,7 +22,7 @@ const ItemsMap = ({ items, currentIndex }) =>
         {el.artNo}
       </td>
       <td>
-        {el.name}
+        <span className={articul}>{el.name}</span>
       </td>
     </tr>
   ))
@@ -34,8 +35,8 @@ const ShortView = ({ short, toDetailsList, changeCurrentBy }) => {
         <table className='table table-striped table-bordered'>
           <thead className='thead-dark'>
             <tr>
-              <th scope='col' style={{ width: '27%' }}>Артикул</th>
-              <th scope='col' style={{ width: '73' }}>Наименование</th>
+              <th scope='col-4'>Артикул</th>
+              <th scope='col-8'>Наименование</th>
             </tr>
           </thead>
 
@@ -46,8 +47,16 @@ const ShortView = ({ short, toDetailsList, changeCurrentBy }) => {
         </table>
       </ItemsTable>
       <ViewFooter>
-        <Button activation={canIncreaseCurrent} click={() => changeCurrentBy(1)}>D</Button>
-        <Button activation={canDecreaseCurrent} click={() => changeCurrentBy(-1)}>U</Button>
+        <Button activation={canIncreaseCurrent} click={() => changeCurrentBy(1)}>
+          <i class='material-icons'>
+            keyboard_arrow_down
+          </i>
+        </Button>
+        <Button activation={canDecreaseCurrent} click={() => changeCurrentBy(-1)}>
+          <i class='material-icons'>
+            keyboard_arrow_up
+          </i>
+        </Button>
         <Button activation={canMoveItem} click={toDetailsList}>Добавить</Button>
       </ViewFooter>
     </ViewWrapper>

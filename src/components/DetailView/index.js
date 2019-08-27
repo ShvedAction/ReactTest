@@ -23,7 +23,7 @@ const ItemsMap = ({ items, selected, onSelect }) =>
       <div className='col-11'>
         <p>Арт.: {el.artNo}</p>
         <p>{el.name}</p>
-        <div className='product-details'>{el.description}</div>
+        <div className='product-details' dangerouslySetInnerHTML={{ __html: el.description }} />
       </div>
       <div className='col-1 align-self-center'>
 

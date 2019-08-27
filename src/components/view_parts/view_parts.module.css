@@ -1,15 +1,17 @@
 .col {
     flex: 1;
     height: 100%;
-    overflow-y: scroll;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
 }
 .items{
     margin: 5px;
     padding: 20px;
+    overflow-y: scroll;
     border: 1px solid #bbb;
     flex: 1 0 auto;
+    position: relative;
 }
 .footer{
     margin: 20px;

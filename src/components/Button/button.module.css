@@ -1,0 +1,6 @@
+.button{
+    white-space: nowrap;
+}
+.button i{
+    font-size: unset;
+}
