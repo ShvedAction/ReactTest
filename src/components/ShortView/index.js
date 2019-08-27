@@ -16,7 +16,7 @@ const mapDispatchToProps = {
 
 const ItemsMap = ({ items, currentIndex }) =>
   items.map((el, ind) => (
-    <tr className={currentIndex === ind ? "table-primary" : ""} key={el.id}>
+    <tr className={currentIndex === ind ? 'table-primary' : ''} key={el.id}>
       <td>
         {el.artNo}
       </td>
@@ -31,15 +31,15 @@ const ShortView = ({ short, toDetailsList, changeCurrentBy }) => {
   return (
     <ViewWrapper>
       <ItemsTable>
-        <table className={"table table-striped table-bordered"}>
-          <thead className={"thead-dark"}>
+        <table className='table table-striped table-bordered'>
+          <thead className='thead-dark'>
             <tr>
-              <th scope="col" style={{width: "27%"}}>Артикул</th>
-              <th scope="col" style={{width: "73"}}>Наименование</th>
+              <th scope='col' style={{ width: '27%' }}>Артикул</th>
+              <th scope='col' style={{ width: '73' }}>Наименование</th>
             </tr>
           </thead>
 
-          <tbody className={""}>
+          <tbody className=''>
             <ItemsMap items={items} currentIndex={currentIndex} />
           </tbody>
 
