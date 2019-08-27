@@ -48,12 +48,12 @@ const ShortView = ({ short, toDetailsList, changeCurrentBy }) => {
       </ItemsTable>
       <ViewFooter>
         <Button activation={canIncreaseCurrent} click={() => changeCurrentBy(1)}>
-          <i class='material-icons'>
+          <i className='material-icons'>
             keyboard_arrow_down
           </i>
         </Button>
         <Button activation={canDecreaseCurrent} click={() => changeCurrentBy(-1)}>
-          <i class='material-icons'>
+          <i className='material-icons'>
             keyboard_arrow_up
           </i>
         </Button>
